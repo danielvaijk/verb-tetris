@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class Final : MonoBehaviour
@@ -21,9 +22,9 @@ public class Final : MonoBehaviour
     void Update ()
     {
         if (Input.GetKeyDown(KeyCode.F1))
-            Application.LoadLevel(1);
+            SceneManager.LoadScene(1);
         if (Input.GetKeyDown(KeyCode.F2))
-            Application.LoadLevel(0);
+            SceneManager.LoadScene(0);
     }
 
     void WinWindow ()

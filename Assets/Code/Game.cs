@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class Game : MonoBehaviour
@@ -151,7 +152,7 @@ public class Game : MonoBehaviour
                     curVertShift++;
 
                     if (curVertShift == 4)
-                        Application.LoadLevel(3);
+                        SceneManager.LoadScene(3);
                     else
                         ray.SendMessage("UpdateShift", SendMessageOptions.RequireReceiver);
 
@@ -174,7 +175,7 @@ public class Game : MonoBehaviour
             }
             else
             {
-                Application.LoadLevel(2);
+                SceneManager.LoadScene(2);
             }
         }
 
@@ -185,10 +186,10 @@ public class Game : MonoBehaviour
         }
 
         if (setNumber == 5 && curVertShift == 3)
-            Application.LoadLevel(3);
+            SceneManager.LoadScene(3);
 
         if (Input.GetKeyDown(KeyCode.F1))
-            Application.LoadLevel(0);
+            SceneManager.LoadScene(0);
     }
 
     /// <summary> Custom Methods </summary>

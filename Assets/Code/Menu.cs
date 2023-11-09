@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class Menu : MonoBehaviour
@@ -29,7 +30,7 @@ public class Menu : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F1))
         {
-            if (click == "") Application.LoadLevel(1);
+            if (click == "") SceneManager.LoadScene(1);
             else if (click == "creditos" || click == "regras") click = "";
 
             GetComponent<AudioSource>().PlayOneShot(clickSound);

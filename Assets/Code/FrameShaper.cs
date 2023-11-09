@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class FrameShaper : MonoBehaviour
 {
     public int count;
 
-    public GUIText text = new GUIText();
+    public Text text;
 
     public string borderText = "<!                         !>";
     public string semiText = "<!=========================!>";
@@ -21,7 +22,7 @@ public class FrameShaper : MonoBehaviour
             else if (i == count - 2) { text.text = semiText; }
             else if (i == count - 1) { text.text = lastText; }
 
-            GUIText part = Instantiate(text, new Vector2(0.5F, 0.52F - (0.03F * i)), Quaternion.identity) as GUIText;
+            Text part = Instantiate(text, new Vector2(0.5F, 0.52F - (0.03F * i)), Quaternion.identity) as Text;
             part.transform.parent = transform;
         }
     }
